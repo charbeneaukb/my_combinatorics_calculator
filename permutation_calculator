@@ -1,0 +1,19 @@
+from math import factorial
+
+def calculate_permutation_sum(n, r_start, r_end, with_replacement, i):
+    CONSTANT = 1
+    while i > 0:
+        digit = i % 10
+        CONSTANT *= factorial(digit)
+        i = i // 10
+    if with_replacement:
+        for r in range(r_start, r_end + 1):
+            nPr = n**r
+            total_permutations += nPr
+        return total_permutations
+    else:
+        total_permutations = 0
+        for r in range(r_start, r_end + 1):
+            nPr = factorial(n) // (factorial(n - r) * CONSTANT)
+            total_permutations += nPr
+        return total_permutations
