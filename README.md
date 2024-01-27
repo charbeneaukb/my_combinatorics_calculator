@@ -23,8 +23,11 @@ Receive instant results for permutations and combinations.
 
 **Files:**
 combinatorics_calculator.py: The main file for executing calculations.
+
 permutation_calculator.py: Handles permutation calculations based on user input.
+
 combination_calculator.py: Manages combination calculations using a modular approach.
+
 factorial_constant.py: Provides a utility function to calculate the factorial constant.
 
 Feel free to explore and customize this Combinatorics Calculator to suit your specific needs. Whether you are a student working on math assignments or a developer integrating combinatorics calculations into your project, my_combinatorics_calculator is designed to make the process efficient and user-friendly.
