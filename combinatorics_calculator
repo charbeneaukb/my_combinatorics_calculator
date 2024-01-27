@@ -1,0 +1,38 @@
+from math import factorial
+from permutation_calculator import calculate_permutation_sum
+from combination_calculator import calculate_combination_sum
+
+def main():
+    while True:
+        print("Welcome to the Combinatorics Calculator!")
+
+        rearrange_set = input("Are you calculating the number of ways to rearrange a given set? (Y/N): ").lower() == 'y'
+        
+        if not rearrange_set: # Combination
+            form_subset = input("Are you calculating the number of ways to form a subset or subsets of specified length(s) from a given set? (Y/N): ").lower() == 'y'
+            if form_subset:
+                n = int(input("Enter the total number of objects in the set (n): "))
+                r_start = int(input("Enter the lower bound for the number of selections from the set: "))
+                r_end = int(input("Enter the upper bound for the number of selections from the set: "))
+                   # Get the factorial constant
+                i = int(input("If there 2 or more identical objects in the set, enter, in any order, the number of copies of each distinct type consecutively. Otherwise, enter 0."))
+                result = calculate_combination_sum(n, r_start, r_end, i)
+                print(f"The result of the calculation is: {result}")
+            else:
+                print("Invalid input.")
+        
+        else: # Permutation
+            n = int(input("How many objects are there? Enter an integer value for n: "))
+            with_replacement = input("Is the selection with replacement? (Y/N): ").lower() == 'y'
+            r_start = int(input("Enter the lower bound for the number of positions: "))
+            r_end = int(input("Enter the upper bound for the number of positions: "))
+            i = int(input("If there 2 or more identical objects in the set, enter, in any order, the number of copies of each distinct type consecutively. Otherwise, enter 0."))
+            result = calculate_permutation_sum(n, r_start, r_end, with_replacement,i)
+            print(f"The result of the calculation is: {result}")
+
+        repeat = input("Do you want to perform another calculation? (Y/N): ").lower()
+        if repeat != 'y':
+            break
+
+if __name__ == "__main__":
+    main()
