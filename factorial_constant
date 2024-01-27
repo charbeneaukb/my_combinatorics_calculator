@@ -1,0 +1,10 @@
+from math import factorial
+
+def factorial_constant(i):
+    CONSTANT = 1
+    while i > 0:
+        digit = i % 10
+        CONSTANT *= factorial(digit)
+        i = i // 10
+    
+    return CONSTANT
